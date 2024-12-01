@@ -5,6 +5,24 @@
   background-size: cover;
 }
 
+header {
+  display: block;
+  justify-self: center;
+  font-size: 34px;
+  font-weight: 900;
+  width: 75%;
+}
+
+header > a {
+  padding-left: 5%;
+  padding-right: 5%;
+  color: rgba(41, 37, 37, 0.87);
+}
+
+header > a:visited {
+  color: rgba(41, 37, 37, 0.87);
+}
+
 #home-block {
   background-color: rgb(218, 199, 171);
   opacity: 90%;
