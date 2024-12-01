@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-const Login = () => {
+const Login = (setLoginToken) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const submitHandler = async (event) => {
     
     event.preventDefault();
-    
+
     try {
 
       const postCredentials = await fetch("http://localhost:3000/login", {
@@ -24,10 +24,13 @@ const Login = () => {
       }
 
       const responseJSON = await postCredentials.json();
-      console.log(responseJSON);
+      const token = responseJSON.token;
+      console.log(token);
+      setLoginToken(token);
+
 
     } catch (e) {
-      alert("Invalid Credentials");
+    
     }
   }
 

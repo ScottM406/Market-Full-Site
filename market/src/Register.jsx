@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Register = () => {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [token, setToken] = useState("");
 
   const submitHandler = async (event) => {
 
@@ -19,12 +21,15 @@ const Register = () => {
   })
 
   const responseJSON = await postNewCredentials.json();
-  console.log(responseJSON);
-
+  const token = responseJSON.token;
+  setToken(token);
   }
 
   return (
     <>
+     { token ?
+     <h1 id="register-form">Thank you for reqistering! Please <Link to="/login">log in</Link> to continue.</h1> 
+     :
       <form id="register-form" onSubmit={submitHandler}>
       <h1>Please Register below to shop online.</h1>
         <input
@@ -41,7 +46,7 @@ const Register = () => {
           onChange={(event) => setPassword(event.target.value)}
         />
         <button type="submit">Register</button>
-      </form>
+      </form> }
     </>
   )
 }
