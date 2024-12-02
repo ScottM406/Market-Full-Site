@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Login = (setLoginToken) => {
+const Login = ( { setLoginToken } ) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -25,7 +25,6 @@ const Login = (setLoginToken) => {
 
       const responseJSON = await postCredentials.json();
       const token = responseJSON.token;
-      console.log(token);
       setLoginToken(token);
 
 
