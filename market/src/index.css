@@ -78,3 +78,22 @@ header > a:visited {
   margin-right: auto;
   padding-top: 2%;
 }
+
+#products-background {
+  background-color: rgb(218, 199, 171);
+  opacity: 90%;
+  margin-top: 20px;
+  min-height: 92.5vh;
+  width: 90vw;
+  justify-self: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+
+}
+
+.product-section {
+  text-align: center;
+  border: solid 2px rgb(151, 110, 47)
+}
