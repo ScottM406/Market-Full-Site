@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 
-const Products = () => {
+const Products = ( { loginToken } ) => {
 
   const [products, setProducts] = useState([]);
 
@@ -24,6 +24,15 @@ const Products = () => {
           <h3 className="product-title">{product.title}</h3>
           <h4 className="product-price">{product.price}</h4>
           <p className="product-description">{product.description}</p>
+          { loginToken ?
+            <>
+              <button className="add-counter-plus">+</button>
+              <input className="add-counter-input"></input> 
+              <button className="add-counter-minus">-</button>
+              <button className="add-button">Add to Cart</button>
+            </>
+          : null
+          }
         </section>
       ))}
     </div>
