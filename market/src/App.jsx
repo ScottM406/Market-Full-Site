@@ -15,7 +15,7 @@ return (
     <Navbar loginToken={loginToken}/>
     <Routes>
       <Route path="/" element={<Homepage loginToken={loginToken} />} />
-      <Route path="/products" element={<Products />} />
+      <Route path="/products" element={<Products loginToken={loginToken}/>} />
       <Route path="/login" element= {<Login setLoginToken={setLoginToken} />} />
       <Route path="/register" element= {<Register />} />
     </Routes>
